@@ -20,7 +20,11 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 
+// Add a basic route for the root URL
+app.get("/", (req, res) => {
+  res.send("Welcome to the backend API!");
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
